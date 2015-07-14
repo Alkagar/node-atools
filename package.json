@@ -1,19 +1,22 @@
 {
-  "name": "atools",
-  "version": "1.0.0",
-  "description": "Basic node tools",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Alkagar/node-atools.git"
-  },
-  "author": "Jakub Mrowiec - Alkagar",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Alkagar/node-atools/issues"
-  },
-  "homepage": "https://github.com/Alkagar/node-atools#readme"
+    "name": "atools",
+    "version": "1.0.0",
+    "description": "Basic node tools",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Alkagar/node-atools.git"
+    },
+    "author": "Jakub Mrowiec - Alkagar",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Alkagar/node-atools/issues"
+    },
+    "homepage": "https://github.com/Alkagar/node-atools#readme",
+    "dependencies": {
+        "redis": "^0.12.1"
+    }
 }
