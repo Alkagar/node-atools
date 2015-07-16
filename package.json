@@ -1,6 +1,6 @@
 {
   "name": "atools",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Basic node tools",
   "main": "index.js",
   "scripts": {
