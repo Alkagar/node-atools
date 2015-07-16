@@ -4,10 +4,10 @@ var redlock = require('./redlock.js');
 module.exports = function(setup) {
     var obj = {};
 
-    var client = redis.createClient();
     var start = function() {};
     var stop = function() {};
     var exit = function() {};
+    var client = setup.redisClient || redis.createClient();
     var prefix = '';
     var resource = '';
     var ttl = 10 * 1000;
