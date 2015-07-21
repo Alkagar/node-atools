@@ -1,7 +1,7 @@
 {
-  "name": "atools",
+  "name": "exclusive-startup",
   "version": "1.0.3",
-  "description": "Basic node tools",
+  "description": "Exclusive startup with simple redis lock.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
