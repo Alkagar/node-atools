@@ -12,10 +12,22 @@ module.exports = function(setup) {
     var resource = '';
     var ttl = 10 * 1000;
     var extendInterval = 5 * 1000;
-
+    setup = setup || {};
 
     if (typeof setup.start === 'function') {
         start = setup.start;
+    }
+
+    if(typeof setup.onCantAquire !== 'function') {
+        setup.onCantAquire = function() {
+            console.log('Cannot aquire lock!');
+        };
+    }
+
+    if(typeof setup.onAquire !== 'function') {
+        setup.onAquire = function() {
+            console.log('Lock aquired!');
+        };
     }
 
     if (typeof setup.stop === 'function') {
@@ -60,12 +72,12 @@ module.exports = function(setup) {
         rd.lock(ttl, function(err, data) {
             if (err) {
                 // we failed to aquire lock
-                console.log('Cant aquire lock... :(');
+                setup.onCantAquire();
                 // lock was not aquired, let's try again after extendInterval
                 setTimeout(tryToStart, extendInterval);
             } else {
                 // we have lock for this process, we can start our process
-                console.log('Lock aquired! :D');
+                setup.onAquire();
                 start();
 
                 // run callback if provided
